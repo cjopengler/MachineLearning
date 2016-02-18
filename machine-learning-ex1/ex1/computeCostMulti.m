@@ -14,7 +14,16 @@ J = 0;
 %               You should set J to the cost.
 
 
+sum = 0;
 
+for i=1:m
+ 
+  error = (theta'*X(i, :)' - y(i)) ^ 2;
+ 
+  sum = sum + error;
+end
+
+J = (sum / (2*m));
 
 
 % =========================================================================

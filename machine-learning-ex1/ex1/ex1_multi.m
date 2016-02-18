@@ -55,6 +55,7 @@ fprintf('Normalizing Features ...\n');
 X = [ones(m, 1) X];
 
 
+
 %% ================ Part 2: Gradient Descent ================
 
 % ====================== YOUR CODE HERE ======================
@@ -106,6 +107,13 @@ fprintf('\n');
 % not need to be normalized.
 price = 0; % You should change this
 
+nor_sq = (1650 - mu(1)) / sigma(1);
+nor_br = (3 - mu(2)) / sigma(2);
+
+nor_pre = [1 nor_sq nor_br];
+
+price =  nor_pre * theta;
+
 
 % ============================================================
 
@@ -151,7 +159,7 @@ fprintf('\n');
 % ====================== YOUR CODE HERE ======================
 price = 0; % You should change this
 
-
+price = [1 1650 3] * theta;
 % ============================================================
 
 fprintf(['Predicted price of a 1650 sq-ft, 3 br house ' ...
