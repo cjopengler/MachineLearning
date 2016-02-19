@@ -1,0 +1,703 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>第四课 多特征量线性回归 | 介绍</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.6">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../../src/machineLearning/Lesson5.html" />
+    
+    
+    <link rel="prev" href="../../src/machineLearning/Lesson3.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="1.4"
+        data-chapter-title="第四课 多特征量线性回归"
+        data-filepath="src/machineLearning/Lesson4.md"
+        data-basepath="../.."
+        data-revision="Fri Feb 19 2016 13:08:48 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" >
+            
+            <span><b>1.</b> 机器学习</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="src/machineLearning/Lesson1.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        第一课 介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="src/machineLearning/Lesson2.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        第二课 单一特征量的线性回归
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="src/machineLearning/Lesson3.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        第三课
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="src/machineLearning/Lesson4.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        第四课 多特征量线性回归
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="src/machineLearning/Lesson5.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson5.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        第五课
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="src/machineLearning/Lesson6.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson6.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        第六课
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="src/machineLearning/Lesson7.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson7.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        第七课 正规化
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="src/machineLearning/Lesson8.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson8.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.8.</b>
+                        
+                        第八课
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="src/machineLearning/Lesson9.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson9.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.9.</b>
+                        
+                        第九课
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="src/machineLearning/Lesson10.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson10.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.10.</b>
+                        
+                        第十课 机器学习的优化方法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="src/machineLearning/Lesson11.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson11.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.11.</b>
+                        
+                        第十一课 系统设计
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="src/machineLearning/Lesson12.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson12.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.12.</b>
+                        
+                        第十二课 支持向量机(SVM)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="src/machineLearning/Lesson13.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson13.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.13.</b>
+                        
+                        第十三课 聚类
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="src/machineLearning/Lesson14.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson14.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.14.</b>
+                        
+                        第十四课 降维
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="src/machineLearning/Lesson15.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson15.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.15.</b>
+                        
+                        第十五课 异常检测
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="src/machineLearning/Lesson16.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson16.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.16.</b>
+                        
+                        第十六课 推荐系统
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="src/machineLearning/Lesson17.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson17.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.17.</b>
+                        
+                        第十七课 大规模机器学习
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="src/machineLearning/Lesson18.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson18.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.18.</b>
+                        
+                        第十八课 应用举例: 图片 OCR
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="src/machineLearning/Lesson19.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson19.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.19.</b>
+                        
+                        第十九课 总结
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="src/machineLearning/ex.html">
+            
+                
+                    <a href="../../src/machineLearning/ex.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.20.</b>
+                        
+                        机器学习作业
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" >
+            
+            <span><b>2.</b> Python学习</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="src/python/语法.html">
+            
+                
+                    <a href="../../src/python/语法.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        语法
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" >
+            
+            <span><b>3.</b> Octave学习</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="src/octave/Octave语法.html">
+            
+                
+                    <a href="../../src/octave/Octave语法.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        语法
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" >
+            
+            <span><b>4.</b> 量化交易</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="src/quant/量化宣言.html">
+            
+                
+                    <a href="../../src/quant/量化宣言.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        量化宣言
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" >
+            
+            <span><b>4.2.</b> 量化交易的历史读书笔记</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" >
+            
+            <span><b>4.3.</b> 套利统计</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="src/quant/statARB/第一章.html">
+            
+                
+                    <a href="../../src/quant/statARB/第一章.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.1.</b>
+                        
+                        第一章 蒙特卡罗的谬误
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2" data-path="src/quant/statARB/第二章.html">
+            
+                
+                    <a href="../../src/quant/statARB/第二章.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.2.</b>
+                        
+                        第二章 统计套利
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3" data-path="src/quant/statARB/第三章.html">
+            
+                
+                    <a href="../../src/quant/statARB/第三章.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.3.</b>
+                        
+                        第三章 结构模型
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" >
+            
+            <span><b>4.4.</b> 量化交易框架</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" >
+            
+            <span><b>4.5.</b> 机器学习课题</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.5.1" data-path="src/quant/基于逻辑回归判断明天涨跌.html">
+            
+                
+                    <a href="../../src/quant/基于逻辑回归判断明天涨跌.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.1.</b>
+                        
+                        课题一 基于逻辑回归判断明天涨跌
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../" >介绍</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="lesson4">Lesson4</h1>
+<h2 id="41">4-1</h2>
+<p>&#x524D;&#x9762;&#x6240;&#x7814;&#x7A76;&#x7684;&#x90FD;&#x662F;&#x57FA;&#x4E8E;&#x5355;&#x53D8;&#x91CF;&#x7684;&#x9884;&#x6D4B;&#x6A21;&#x578B;&#xFF0C;&#x5373;&#x901A;&#x8FC7;&#x623F;&#x5B50;&#x7684;&#x5927;&#x5C0F;&#x8FD9;&#x4E00;&#x4E2A;&#x7279;&#x5F81;&#x91CF;&#x6765;&#x62DF;&#x5408;&#x653E;&#x5047;&#x7684;&#x66F2;&#x7EBF;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x6211;&#x4EEC;&#x5E38;&#x5E38;&#x9700;&#x8981;&#x591A;&#x4E2A;&#x53D8;&#x91CF;&#x6765;&#x8FDB;&#x884C;&#x62DF;&#x5408;&#x3002;&#x73B0;&#x5728;&#x7684;&#x65B9;&#x7A0B;&#x5982;&#x4E0B;:</p>
+<p><img src="../../res/quant/4_0.png" alt=""></p>
+<p>&#x4E8B;&#x5B9E;&#x4E0A;&#x8FD9;&#x6837;&#x4E00;&#x79CD;&#x8868;&#x8FF0;&#x65B9;&#x6CD5;&#xFF0C;&#x5374;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5411;&#x91CF;&#x7684;&#x4E58;&#x6CD5;&#x6765;&#x8868;&#x793A;&#x51FA;&#x6765;&#x3002;</p>
+<p><img src="../../res/quant/4_1.png" alt=""></p>
+<p>&#x901A;&#x8FC7;&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x7CFB;&#x6570;&#x3B8;&#x53D8;&#x91CF;&#xFF0C;x&#x662F;&#x6240;&#x6709;x&#x7684;&#x5411;&#x91CF;&#x3002;&#x901A;&#x8FC7;&#x8FD9;&#x91CC;&#x77E5;&#x9053;&#xFF0C;&#x56E0;&#x4E3A;&#x5F15;&#x5165;&#x4E86;x0=1,&#x6240;&#x4EE5;x&#x7684;&#x7EF4;&#x5EA6;&#x662F;n+1&#xFF0C;&#x4E5F;&#x5C31;&#x662F; &#x8BFE;&#x7A0B;&#x4E2D;&#x5E38;&#x5199;&#x7684; R^n+1 .</p>
+<p>&#x540C;&#x65F6;&#xFF0C;&#x5BF9;&#x4E8E;&#x591A;&#x7279;&#x5F81;&#x91CF;&#x7684;&#x7EBF;&#x6027;&#x56DE;&#x5F52;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x662F;&#x8FD9;&#x6837;&#x7684; (x1, x2, ..., xn, y)&#x800C;&#x4E0D;&#x662F;[(x1,y1), (x2, y2), ..., (xn, yn)] &#x8FD9;&#x79CD;&#x8868;&#x8FF0;&#x65B9;&#x5F0F;&#x662F;&#x5355;&#x53D8;&#x91CF;&#x7684;&#x7EBF;&#x6027;&#x56DE;&#x5F52;.</p>
+<h2 id="42">4-2</h2>
+<p>&#x518D;&#x6B21;&#x56DE;&#x5230;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x7B97;&#x6CD5;&#xFF0C;</p>
+<p><img src="../../res/quant/4_2.png" alt=""></p>
+<p>&#x6C42;min(J)&#x7684;&#x68AF;&#x5EA6;&#x9012;&#x5F52;&#x4E0B;&#x964D;&#x903C;&#x8FD1;&#x7B97;&#x6CD5;&#xFF0C;&#x662F;</p>
+<p><img src="../../res/quant/4_3.png" alt=""></p>
+<h2 id="43">4-3</h2>
+<p>&#x7279;&#x5F81;&#x503C;&#x7F29;&#x653E;&#x3002;&#x5BF9;&#x4E8E;x1,x2,...xn&#x8FD9;&#x4E9B;&#x7279;&#x5F81;&#x503C;&#x7684;&#x53D6;&#x503C;&#x53EF;&#x80FD;&#x8303;&#x56F4;&#x504F;&#x5DEE;&#x5F88;&#x5927;&#xFF0C;&#x4F8B;&#x5982;&#x623F;&#x5C4B;&#x7684;&#x5927;&#x5C0F;1000-2000&#x7684;&#x8303;&#x56F4;&#xFF0C;&#x800C;&#x623F;&#x95F4;&#x7684;&#x6570;&#x91CF;1-5.&#x8FD9;&#x6837;&#x4F1A;&#x5BFC;&#x81F4;&#x68AF;&#x5EA6;&#x7EBF;&#x7684;&#x4E0D;&#x5747;&#x5300;&#xFF0C;&#x4F7F;&#x5F97;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x7B97;&#x6CD5;&#x6BD4;&#x8F83;&#x6162;&#x3002;&#x6240;&#x4EE5;&#x6B63;&#x786E;&#x7684;&#x505A;&#x6CD5;&#xFF0C;&#x662F;&#x4F7F;&#x5F97;&#x6240;&#x6709;&#x7684;&#x7279;&#x5F81;&#x503C;&#x90FD;&#x843D;&#x5728;[-0.5, 0.5]&#x4E4B;&#x95F4;&#xFF0C;&#x8FD9;&#x6837;&#x8FDB;&#x884C;&#x5F52;&#x4E00;&#x5316;&#x4F1A;&#x66F4;&#x597D;&#x7684;&#x8FDB;&#x884C;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x3002;&#x90A3;&#x4E48;&#x5982;&#x4F55;&#x5F52;&#x4E00;&#x5316;&#xFF0C;x&#x5728;[a, b]&#x533A;&#x95F4;&#x53D6;&#x503C;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x5C06;&#x8BE5;&#x533A;&#x95F4;&#x7684;&#x4E2D;&#x5FC3;&#x79FB;&#x52A8;&#x5230;0, &#x6240;&#x4EE5;&#x5C31;&#x662F; (a+b)/2&#x79FB;&#x52A8;&#x5230;0,&#x6240;&#x4EE5;&#x5C31;&#x662F;x-(a+b)/2 &#x540C;&#x65F6; &#x5C06;&#x5927;&#x5C0F;&#x53D8;&#x5316;&#xFF0C;&#x6240;&#x4EE5;&#x6700;&#x7EC8;&#x5C31;&#x662F;: (x - (a+b)/2) / (b-a) &#x8FD9;&#x5C31;&#x662F;&#x5F52;&#x4E00;&#x5316;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x5047;&#x8BBE;a = 100, b = 200&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x662F; (x-150)/100, &#x5F53;x = 100&#x65F6;&#xFF0C;&#x662F; -0.5, &#x5F53;x = 200, &#x662F;+0.5&#xFF0C;&#x5F53;x=130&#x65F6;-0.2,&#x5F53;x=150&#x662F;0. &#x6240;&#x4EE5;&#x6070;&#x597D;&#x5F52;&#x4E00;&#x5316;&#x7279;&#x5F81;&#x53D8;&#x91CF;&#x3002;</p>
+<pre><code>normalize(x)=(x- (a+b)/2) / (b-a), x&#x2208;[a, b]
+</code></pre><h2 id="44">4-4</h2>
+<p>&#x5BF9;&#x7279;&#x5F81;&#x503C;&#x7684;&#x4F18;&#x5316;&#x53EF;&#x4EE5;&#x52A0;&#x901F;&#x8FED;&#x4EE3;&#x3002;&#x90A3;&#x4E48;&#x540C;&#x65F6;&#x3B1;&#x7684;&#x9009;&#x53D6;&#x4E5F;&#x662F;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x3002;&#x5982;&#x679C;&#x9009;&#x53D6;&#x8FC7;&#x5927;&#xFF0C;&#x4F1A;&#x4F7F;&#x5F97;J(&#x3B8;)&#x65E0;&#x6CD5;&#x4E0B;&#x964D;&#x6536;&#x655B;&#xFF1B;&#x5982;&#x679C;&#x9009;&#x53D6;&#x8FC7;&#x5C0F;&#x90A3;&#x4E48;&#x5219;&#x4F1A;&#x6536;&#x655B;&#x7684;&#x901F;&#x5EA6;&#x8FC7;&#x6162;&#x3002;&#x6240;&#x4EE5;&#x4E00;&#x822C;&#x4ECE;:0.00001, 0.00003&#x5F00;&#x59CB;&#xFF0C;&#x540C;&#x65F6;&#x89C2;&#x5BDF;J(&#x3B8;)&#x7684;&#x51FD;&#x6570;&#x56FE;&#x50CF;&#x770B;&#x770B;&#x662F;&#x5426;&#x662F;&#x4E0D;&#x505C;&#x7684;&#x6536;&#x655B;&#x53D8;&#x5C0F;&#xFF0C;&#x8D8B;&#x4E8E;&#x5E73;&#x7F13;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x8FDB;&#x884C;&#x8C03;&#x4F18;&#x3B1;.&#x76EE;&#x524D;&#x5173;&#x4E8E;J(&#x3B8;)&#x7684;&#x89C2;&#x5BDF;&#xFF0C;&#x4EC5;&#x4EC5;&#x9650;&#x4E8E;&#x8089;&#x773C;&#x89C2;&#x6D4B;&#x3002;&#x56E0;&#x4E3A;&#x673A;&#x5668;&#x89C2;&#x5BDF;&#x4E5F;&#x662F;&#x6709;&#x5F88;&#x591A;&#x95EE;&#x9898;&#x3002;&#x76EE;&#x524D;&#x7684;&#x505A;&#x6CD5;&#xFF0C;&#x4F9D;&#x7136;&#x662F;&#x901A;&#x8FC7;&#x3B1;&#x548C;J(&#x3B8;)&#x7684;&#x56FE;&#x50CF;&#x8FDB;&#x884C;&#x89C2;&#x5BDF;&#xFF0C;&#x6765;&#x5F97;&#x77E5;&#x662F;&#x5426;&#x6536;&#x655B;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E; &#x3B1; &#x7684;&#x53D6;&#x503C;&#xFF0C;&#x662F;&#x4ECE; 0.001, 0.003, 0.01 ... 3&#x500D;&#x901F;&#x589E;&#x52A0;&#xFF0C;&#x6765;&#x9010;&#x6B65;&#x89C2;&#x5BDF;&#x5F97;&#x5230;&#x6700;&#x597D;&#x7684;&#x3B1;&#x3002;</p>
+<h2 id="45">4-5</h2>
+<p>&#x975E;&#x7EBF;&#x6027;&#xFF0C;&#x800C;&#x662F;&#x591A;&#x9879;&#x5F0F;&#x56DE;&#x5F52;&#x3002;</p>
+<p><img src="../../res/quant/4_4.png" alt=""></p>
+<p>&#x5982;&#x679C;&#x662F;&#x8FD9;&#x6837;&#xFF0C;&#x90A3;&#x4E48;&#x7279;&#x5F81;&#x7684;&#x5F52;&#x4E00;&#x5316;&#x5C31;&#x975E;&#x5E38;&#x7684;&#x91CD;&#x8981;&#xFF0C;&#x4F8B;&#x5982;x&#x2208;[1,10] &#x4F46;&#x662F;x^2=[1,100] x^3=[1,1000]. &#x6240;&#x4EE5;&#x672C;&#x8D28;&#x4E0A;&#x8FD8;&#x662F;&#x5BF9;x1,x2,x3&#x8FD9;&#x79CD;&#x7279;&#x5F81;&#x91CF;&#x7684;&#x5F52;&#x4E00;&#xFF0C;&#x53EA;&#x662F;&#x8FD9;&#x65F6;&#x5019;&#x53D8;&#x6210;&#x4E86;x1=x, x2=x^2, x3=x^3.</p>
+<p>&#x5173;&#x4E8E;&#x7279;&#x5F81;&#x91CF;&#x7684;&#x9009;&#x53D6;&#xFF0C;&#x4E0A;&#x9762;&#x53EF;&#x80FD;x^3&#x7684;&#x53D8;&#x5316;&#x592A;&#x5FEB;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x8003;&#x8651;x^1/2&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x4F7F;&#x5F97;&#x53D8;&#x5316;&#x6CA1;&#x6709;&#x90A3;&#x4E48;&#x5FEB;&#xFF0C;&#x4EE5;&#x4FBF;&#x5F97;&#x5230;&#x66F4;&#x597D;&#x7684;&#x62DF;&#x5408;&#x3002;</p>
+<p>&#x4E0D;&#x8BBA;&#x662F;&#x5426;&#x662F;&#x591A;&#x9879;&#x5F0F;&#x5BF9;&#x4E8E;&#x3B8;&#x7684;&#x504F;&#x5BFC;&#x6570;&#x662F;&#x6CA1;&#x6709;&#x5F71;&#x54CD;&#x7684;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5C06;&#x6BCF;&#x4E2A;&#x3B8;&#x7684;&#x7CFB;&#x6570;&#x5F53;&#x505A;x&#x5373;&#x53EF;&#x3002;&#x4F46;&#x662F;&#x7279;&#x5F81;&#x503C;&#x7684;&#x9009;&#x53D6;&#x662F;&#x4E2A;&#x95EE;&#x9898;&#x3002;</p>
+<h2 id="46">4-6</h2>
+<p>&#x5728;&#x8FD9;&#x90E8;&#x5206;&#x4E3B;&#x8981;&#x8BB2;&#x8FF0;&#x7684;&#x662F;&#x6570;&#x5B66;&#x7684;&#x6C42;&#x89E3;&#x65B9;&#x6CD5;--&#x6807;&#x51C6;&#x65B9;&#x7A0B;&#x6CD5;&#x3002;&#x4F8B;&#x5982;&#xFF0C;J(&#x3B8;)&#x7684;&#x6700;&#x503C;&#x95EE;&#x9898;&#xFF0C;&#x662F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5BF9;&#x3B8;&#x7684;&#x6C42;&#x5BFC;&#xFF0C;&#x6765;&#x5F97;&#x5230;&#x6700;&#x503C;&#x3002;&#x540C;&#x65F6;&#xFF0C;&#x5982;&#x679C;h&#x3B8;(x)&#x662F;&#x7EBF;&#x6027;&#x7684;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x901A;&#x8FC7;&#x7EBF;&#x6027;&#x4EE3;&#x6570;&#x6C42;&#x89E3;&#x3002;</p>
+<p><img src="../../res/quant/4_5.png" alt=""></p>
+<p><img src="../../res/quant/4_6.png" alt=""></p>
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x6CE8;&#x610F;&#x5230;X&#x662F;&#x975E;&#x5BF9;&#x89D2;&#x77E9;&#x9635;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;X&#x7684;&#x9006;&#x77E9;&#x9635;&#x662F;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x90A3;&#x4E48;&#x8BE5;&#x5982;&#x4F55;&#x8BA1;&#x7B97;&#x5462;&#xFF1F;&#x6709;&#x4E2A;&#x6280;&#x5DE7;&#xFF0C;&#x5148;&#x5C06;X&#x53D8;&#x6210;&#x5BF9;&#x89D2;&#x77E9;&#x9635;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4E58;&#x4EE5;X&#x7684;&#x8F6C;&#x81F3;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x5982;&#x4E0B;:</p>
+<p><img src="../../res/quant/4_7.png" alt=""></p>
+<p>&#x901A;&#x8FC7;&#x8FD9;&#x6837;&#x7684;&#x4E00;&#x79CD;&#x6570;&#x5B66;&#x65B9;&#x5F0F;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x6C42;&#x51FA;&#x3B8;. &#x6211;&#x7684;&#x7591;&#x60D1;&#xFF1F;&#x5C31;&#x662F;&#x3B8;&#x7684;&#x4E2A;&#x6570;&#x662F;n&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x6C42;&#x89E3;&#x9700;&#x8981;n&#x4E2A;&#x65B9;&#x7A0B;&#x5373;&#x53EF;&#xFF0C;&#x53EF;&#x662F;m&#x662F;&#x5927;&#x4E8E;n&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x662F;&#x65E0;&#x6CD5;&#x6C42;&#x89E3;&#x51FA;&#x3B8;&#xFF0C;&#x56E0;&#x4E3A;&#x65B9;&#x7A0B;&#x5197;&#x4F59;&#x4E86;&#xFF1F;&#x8FD9;&#x4E2A;&#x9700;&#x8981;&#x4F7F;&#x7528;OCTAVE &#x8FDB;&#x884C;&#x9A8C;&#x8BC1;&#x4E00;&#x4E0B;&#xFF0C;&#x5947;&#x602A;&#x7684;&#x73B0;&#x8C61;&#x3002;</p>
+<p>&#x90A3;&#x4E48;&#x7A76;&#x7ADF;&#x662F;&#x9009;&#x62E9;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x8FD8;&#x662F;&#x4F7F;&#x7528;&#x6807;&#x51C6;&#x65B9;&#x7A0B;&#x5462;&#xFF1F;&#x7ED3;&#x8BBA;&#x662F;&#xFF1A;&#x5982;&#x679C;&#x7279;&#x5F81;&#x5C0F;&#x4E8E;10^6&#xFF0C;&#x4F7F;&#x7528;&#x6807;&#x51C6;&#x65B9;&#x7A0B;&#xFF1B;&#x5426;&#x5219;&#xFF0C;&#x56E0;&#x4E3A;&#x9006;&#x77E9;&#x9635;&#x7684;&#x8BA1;&#x7B97;&#x8F83;&#x6162;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x6807;&#x51C6;&#x65B9;&#x7A0B;&#x53EA;&#x9002;&#x7528;&#x4E8E;&#x7EBF;&#x6027;&#x56DE;&#x5F52;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x7EBF;&#x6027;&#x7684;h(x)&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x6240;&#x4EE5;&#x5E76;&#x975E;&#x9002;&#x7528;&#x4E8E;&#x6240;&#x6709;&#xFF0C;&#x5728;&#x7EBF;&#x6027;&#x56DE;&#x5F52;&#x4E2D;&#x901F;&#x5EA6;&#x4F1A;&#x5F88;&#x5FEB;&#x3002;</p>
+<h2 id="47">4-7</h2>
+<p>&#x901A;&#x8FC7;&#x4E0A;&#x9762;&#x7684;&#x8BA1;&#x7B97;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6C42;&#x3B8;&#x7684;&#x65F6;&#x5019;X&#x4E58;&#x4EE5;X&#x7684;&#x8F6C;&#x81F3;&#x7684;&#x9006;&#x77E9;&#x9635;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x95EE;&#x9898;&#x3002;&#x5982;&#x679C;&#x8FC7;&#x662F;&#x8FD9;&#x6837;&#xFF0C;&#x9700;&#x8981;&#x505A;&#x4E24;&#x70B9;&#xFF1A;</p>
+<p>1 &#x68C0;&#x67E5;X&#x77E9;&#x9635;&#x662F;&#x5426;&#x6709;&#x7EBF;&#x6027;&#x76F8;&#x5173;&#x7684;&#x5411;&#x91CF;&#x3002;</p>
+<p>2 &#x53EF;&#x80FD;&#x662F;&#x7279;&#x5F81;&#x503C;&#x8FC7;&#x591A;&#xFF0C;&#x51CF;&#x5C11;&#x7279;&#x5F81;&#x503C;&#x7684;&#x6570;&#x91CF;&#x8BD5;&#x8BD5;&#x3002;</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../src/machineLearning/Lesson3.html" class="navigation navigation-prev " aria-label="Previous page: 第三课"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../src/machineLearning/Lesson5.html" class="navigation navigation-next " aria-label="Next page: 第五课"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

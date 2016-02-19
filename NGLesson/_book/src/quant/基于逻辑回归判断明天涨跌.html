@@ -1,0 +1,693 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>课题一 基于逻辑回归判断明天涨跌 | 介绍</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.6">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    
+    <link rel="prev" href="../../src/quant/statARB/第三章.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="4.5.1"
+        data-chapter-title="课题一 基于逻辑回归判断明天涨跌"
+        data-filepath="src/quant/基于逻辑回归判断明天涨跌.md"
+        data-basepath="../.."
+        data-revision="Fri Feb 19 2016 13:08:48 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" >
+            
+            <span><b>1.</b> 机器学习</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="src/machineLearning/Lesson1.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        第一课 介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="src/machineLearning/Lesson2.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        第二课 单一特征量的线性回归
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="src/machineLearning/Lesson3.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        第三课
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="src/machineLearning/Lesson4.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        第四课 多特征量线性回归
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="src/machineLearning/Lesson5.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson5.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        第五课
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="src/machineLearning/Lesson6.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson6.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        第六课
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="src/machineLearning/Lesson7.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson7.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        第七课 正规化
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="src/machineLearning/Lesson8.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson8.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.8.</b>
+                        
+                        第八课
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="src/machineLearning/Lesson9.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson9.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.9.</b>
+                        
+                        第九课
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="src/machineLearning/Lesson10.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson10.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.10.</b>
+                        
+                        第十课 机器学习的优化方法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="src/machineLearning/Lesson11.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson11.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.11.</b>
+                        
+                        第十一课 系统设计
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="src/machineLearning/Lesson12.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson12.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.12.</b>
+                        
+                        第十二课 支持向量机(SVM)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="src/machineLearning/Lesson13.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson13.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.13.</b>
+                        
+                        第十三课 聚类
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="src/machineLearning/Lesson14.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson14.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.14.</b>
+                        
+                        第十四课 降维
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="src/machineLearning/Lesson15.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson15.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.15.</b>
+                        
+                        第十五课 异常检测
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="src/machineLearning/Lesson16.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson16.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.16.</b>
+                        
+                        第十六课 推荐系统
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="src/machineLearning/Lesson17.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson17.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.17.</b>
+                        
+                        第十七课 大规模机器学习
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="src/machineLearning/Lesson18.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson18.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.18.</b>
+                        
+                        第十八课 应用举例: 图片 OCR
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="src/machineLearning/Lesson19.html">
+            
+                
+                    <a href="../../src/machineLearning/Lesson19.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.19.</b>
+                        
+                        第十九课 总结
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="src/machineLearning/ex.html">
+            
+                
+                    <a href="../../src/machineLearning/ex.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.20.</b>
+                        
+                        机器学习作业
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" >
+            
+            <span><b>2.</b> Python学习</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="src/python/语法.html">
+            
+                
+                    <a href="../../src/python/语法.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        语法
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" >
+            
+            <span><b>3.</b> Octave学习</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="src/octave/Octave语法.html">
+            
+                
+                    <a href="../../src/octave/Octave语法.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        语法
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" >
+            
+            <span><b>4.</b> 量化交易</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="src/quant/量化宣言.html">
+            
+                
+                    <a href="../../src/quant/量化宣言.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        量化宣言
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" >
+            
+            <span><b>4.2.</b> 量化交易的历史读书笔记</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" >
+            
+            <span><b>4.3.</b> 套利统计</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="src/quant/statARB/第一章.html">
+            
+                
+                    <a href="../../src/quant/statARB/第一章.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.1.</b>
+                        
+                        第一章 蒙特卡罗的谬误
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2" data-path="src/quant/statARB/第二章.html">
+            
+                
+                    <a href="../../src/quant/statARB/第二章.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.2.</b>
+                        
+                        第二章 统计套利
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3" data-path="src/quant/statARB/第三章.html">
+            
+                
+                    <a href="../../src/quant/statARB/第三章.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.3.</b>
+                        
+                        第三章 结构模型
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" >
+            
+            <span><b>4.4.</b> 量化交易框架</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" >
+            
+            <span><b>4.5.</b> 机器学习课题</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="4.5.1" data-path="src/quant/基于逻辑回归判断明天涨跌.html">
+            
+                
+                    <a href="../../src/quant/基于逻辑回归判断明天涨跌.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.1.</b>
+                        
+                        课题一 基于逻辑回归判断明天涨跌
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../" >介绍</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x57FA;&#x4E8E;&#x903B;&#x8F91;&#x56DE;&#x5F52;&#x5224;&#x65AD;&#x660E;&#x5929;&#x6DA8;&#x8DCC;">&#x57FA;&#x4E8E;&#x903B;&#x8F91;&#x56DE;&#x5F52;&#x5224;&#x65AD;&#x660E;&#x5929;&#x6DA8;&#x8DCC;</h1>
+<p>&#x57FA;&#x4E8E;&#x903B;&#x8F91;&#x56DE;&#x5F52;&#xFF0C;&#x8BA1;&#x7B97;&#x660E;&#x5929;&#x6DA8;&#x8DCC;&#x7684;&#x6982;&#x7387;&#x3002;&#x5982;&#x679C;&#x4E0A;&#x6DA8;&#x7684;&#x6982;&#x7387;&#x8F83;&#x5927;&#xFF0C;&#x5219;&#x5728;&#x5F53;&#x5929;&#x6536;&#x76D8;&#x4E70;&#x5165;;&#x5982;&#x679C;&#x4E0A;&#x6DA8;&#x6982;&#x7387;&#x8F83;&#x5C0F;&#xFF0C;&#x5728;&#x6301;&#x6709;&#x5934;&#x5BF8;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x5356;&#x51FA;&#xFF0C;&#x6CA1;&#x6709;&#x6301;&#x6709;&#x5934;&#x5BF8;&#x5219;&#x4E0D;&#x4F1A;&#x4E70;&#x5165;.</p>
+<h2 id="&#x7279;&#x5F81;&#x91CF;&#x7684;&#x9009;&#x53D6;">&#x7279;&#x5F81;&#x91CF;&#x7684;&#x9009;&#x53D6;</h2>
+<table>
+<thead>
+<tr>
+<th>&#x7279;&#x5F81;&#x91CF;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x1</td>
+<td>&#x524D;1&#x5929;&#x7684;&#x6536;&#x76D8;&#x4EF7;, &#x5F00;&#x76D8;&#x4EF7;, &#x6700;&#x9AD8;&#x70B9;&#xFF0C;&#x6700;&#x4F4E;&#x70B9;&#xFF0C;&#x6210;&#x4EA4;&#x91CF;</td>
+</tr>
+<tr>
+<td>x2</td>
+<td>&#x524D;2&#x5929;&#x7684;&#x6536;&#x76D8;&#x4EF7;, &#x5F00;&#x76D8;&#x4EF7;, &#x6700;&#x9AD8;&#x70B9;&#xFF0C;&#x6700;&#x4F4E;&#x70B9;&#xFF0C;&#x6210;&#x4EA4;&#x91CF;</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td>xn</td>
+<td>&#x524D;n&#x5929;&#x7684;&#x6536;&#x76D8;&#x4EF7;, &#x5F00;&#x76D8;&#x4EF7;, &#x6700;&#x9AD8;&#x70B9;&#xFF0C;&#x6700;&#x4F4E;&#x70B9;&#xFF0C;&#x6210;&#x4EA4;&#x91CF;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x5934;&#x5BF8;&#x89C4;&#x6A21;">&#x5934;&#x5BF8;&#x89C4;&#x6A21;</h2>
+<p>&#x5728;&#x5F97;&#x5230; h(x)&#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x4F7F;&#x7528;&#x51EF;&#x5229;&#x516C;&#x5F0F;&#x8FDB;&#x884C;&#x5934;&#x5BF8;&#x786E;&#x5B9A;</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../src/quant/statARB/第三章.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 第三章 结构模型"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+<script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
