@@ -18,9 +18,32 @@ grad = zeros(size(theta));
 %               derivatives of the cost w.r.t. each parameter in theta
 
 
+hx = 1 ./ (1 + exp(-X*theta));
+h1 = log(hx);
+h2 = log(1 - hx);
+
+J = -(h1'*y + h2'*(1-y))/m;
+
+% 去掉θ0的θ矩阵
+thetaLamda = theta(2:end);
+
+% 计算lambda项
+JLamda = (lambda*thetaLamda'*thetaLamda)/(2*m);
+
+J += JLamda;
+
+hx = 1 ./ (1 + exp(-X*theta));
 
 
+for j = 1 : size(theta, 1)
 
+  if j == 1 
+    grad(j) = (hx - y)'*X(:, j) / m;
+  elseif
+    grad(j) = (hx - y)'*X(:, j) / m + lambda*theta(j, 1)/m;
+  end
+  
+end
 
 % =============================================================
 
