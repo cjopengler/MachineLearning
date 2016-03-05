@@ -23,10 +23,50 @@ sigma = 0.3;
 %        mean(double(predictions ~= yval))
 %
 
+% 初始化c 和 sigma 向量
+cVec = [0.01, 0.03, 0.1, 0.3, 1, 3, 10, 30];
+sigmaVec = [0.01, 0.03, 0.1, 0.3, 1, 3, 10, 30];
+
+clen = 2;
+slen = 2;
+% errs 每一对c sigma 的存储向量
+errs = 10000*ones(length(cVec), length(sigmaVec));
 
 
+for i=1: length(cVec)
 
+  for j=1: length(sigmaVec)
+  
+    model= svmTrain(X, y, cVec(i), @(x1, x2) gaussianKernel(x1, x2, sigmaVec(j))); 
+    
+    predictions = svmPredict(model, Xval);
+    
+    err = mean(double(predictions ~= yval));
+    
+    
+    errs(i, j) = err;
+    
+    i
+    j
+    err
+    
+  end
+end
 
+minErr = min(errs(:));
+
+errs
+
+[row, clomn] = find(errs == minErr);
+
+row
+clomn
+
+C = cVec(row(1));
+sigma = sigmaVec(clomn(1));
+
+C
+sigma
 
 
 % =========================================================================

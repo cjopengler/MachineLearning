@@ -4,6 +4,7 @@ function sim = gaussianKernel(x1, x2, sigma)
 %   and returns the value in sim
 
 % Ensure that x1 and x2 are column vectors
+% 注意这一点，必须要保证是列向量
 x1 = x1(:); x2 = x2(:);
 
 % You need to return the following variables correctly.
@@ -16,9 +17,17 @@ sim = 0;
 %
 %
 
+% 计算x1-x的差向量
+deltaX = x1 - x2;
 
+% 计算平方和
+qs = deltaX' * deltaX;
 
+% 计算核函数内部全部参数
+interal = -qs /(2*(sigma^2));
 
+% 最后计算核函数值
+sim = exp(interal);
 
 
 % =============================================================
