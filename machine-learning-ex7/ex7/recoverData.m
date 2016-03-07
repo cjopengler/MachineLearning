@@ -21,7 +21,16 @@ X_rec = zeros(size(Z, 1), size(U, 1));
 %               Notice that U(j, 1:K) is a row vector.
 %               
 
+% 先计算Ureduce, 维度是 n*K (n是x的原始维度)
+Ureduce = U(:, 1:K);
 
+Ureduce_size = size(Ureduce)
+Z_size = size(Z)
+X_rec_size = size(X_rec)
+
+% 计算X_rec, Z的维度是 m*K, X_rec 的维度是 m*n
+
+X_rec = Z * Ureduce';
 
 % =============================================================
 

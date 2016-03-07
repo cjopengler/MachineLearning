@@ -18,8 +18,16 @@ Z = zeros(size(X, 1), K);
 %                    projection_k = x' * U(:, k);
 %
 
+% 取出U的前K列向量 此时的U的维度是 n*K 
+Ureduce = U(:, 1:K);
 
 
+
+% 计算投影 Z 的维度是 m*K, X的维度是n*K
+Z = X * Ureduce;
+
+% Ureduce_size = size(Ureduce)
+% Z_size = size(Z)
 
 % =============================================================
 

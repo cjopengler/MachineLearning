@@ -20,9 +20,11 @@ S = zeros(n);
 %       number of examples).
 %
 
+% 计算协方差矩阵 Σ
+covMatrix = (X'*X)/m;
 
-
-
+% 计算svd
+[U, S, V] = svd(covMatrix);
 
 
 

@@ -58,3 +58,15 @@ plot(x, y) 是默认的将所有的点连在一起。所以如果想划出离散
 	fprintf("test <= 0.5 \n")
 	X = eye(3)
 	X = X <= 0.5
+	
+## bxsfun函数
+这个函数非常方便，因为可以对矩阵进行子矩阵的运算。例如，将矩阵A（3，2）=[1 2; 4 5; 7 8] 每一行分别乘以1， 2 ，3和每一行分别乘以1, 2 ,3就可以这样处理。
+
+	X = [1 2; 3 4; 5 6]
+	fprintf("times for every row\n");
+	a = [1; 2; 3]
+	A = bsxfun(@times, X, a)
+
+	fprintf("times for every column\n");
+	b = [1 2]
+	B = bsxfun(@times, X, b) 
