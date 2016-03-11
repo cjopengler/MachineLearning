@@ -1,8 +1,11 @@
-X = [1; 3; 5]
-PX = X < 3
 
-PY = [1; 1; 0]
+X = [1 2 3; 4 5 6]
 
-P = (PX == PY)
+R = logical([1   1   0  ; 1   0   0])
 
-testSum = sum((PY == 1) & (PX == 1))
+RL = [true true false; true false false]
+
+Result = X(1, R(1, :))
+
+ResultL = X(1, RL(1, :))
+

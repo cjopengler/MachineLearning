@@ -30,6 +30,7 @@ load ('ex8_movies.mat');
 %  R is a 1682x943 matrix, where R(i,j) = 1 if and only if user j gave a
 %  rating to movie i
 
+
 %  From the matrix, we can compute statistics like average rating.
 fprintf('Average rating for movie 1 (Toy Story): %f / 5\n\n', ...
         mean(Y(1, R(1, :))));

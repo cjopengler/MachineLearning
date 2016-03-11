@@ -6,6 +6,9 @@ function [J, grad] = cofiCostFunc(params, Y, R, num_users, num_movies, ...
 %   collaborative filtering problem.
 %
 
+% 先将R变成logical类型，因为外面可能传进来的是double
+R = logical(R);
+
 % Unfold the U and W matrices from params
 X = reshape(params(1:num_movies*num_features), num_movies, num_features);
 Theta = reshape(params(num_movies*num_features+1:end), ...
@@ -41,17 +44,50 @@ Theta_grad = zeros(size(Theta));
 %
 
 
+% 计算X*theta'，矩阵的预测Y的值
+Predicats = X * Theta';
 
+% 将Predicats与Y 做差
+Diff = Predicats - Y;
 
+% 将Diff 用 R 来获取那些R(i,j)=1的部分的数据
+DiffR = Diff(R);
 
+% 对上面的数据求平方和就是代价函数
+J = DiffR' * DiffR / 2;
 
+% 加入正规化, 代价函数的正规化就是 所有Θ平方和 和 所有X平方和
+JRegular = (X(:)' * X(:) + Theta(:)'*Theta(:)) * lambda / 2;
 
+% 代价函数的计算
+J = J + JRegular;
 
+% 计算梯度
 
+% Diff = m * u; Θ = u * f; X= m*f
+% grad_X = Diff * Θ = m * f
+% grad_Theta = Diff' * X = u * f;
 
+% 构造DiffR_grad 使得 对于DiffR来说R(i,j)=0的位置Y(i,j)=0; R(i,j)=1的位置，DiffR(i,j)=DiffR(i,j)
+DiffR_grad = Diff .* R;
 
+% 计算X的梯度
+X_grad = DiffR_grad * Theta;
 
+% X梯度的正规化项, x正规化项就是自己本身乘以lambda
+X_grad_regular = lambda*X;
 
+% 带有正规化的x梯度计算
+X_grad = X_grad + X_grad_regular;
+
+% 计算Θ的梯度
+Theta_grad = DiffR_grad' * X;
+
+% Θ的梯度的正规化项, Θ自己乘以lambda
+Theta_grad_regular = lambda * Theta;
+
+% 带有正规化项的Θ计算
+Theta_grad = Theta_grad + Theta_grad_regular;
 
 
 

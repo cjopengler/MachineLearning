@@ -70,3 +70,17 @@ plot(x, y) 是默认的将所有的点连在一起。所以如果想划出离散
 	fprintf("times for every column\n");
 	b = [1 2]
 	B = bsxfun(@times, X, b) 
+	
+## 根据逻辑向量获取矩阵中的数值
+
+	X = [1 2 3; 4 5 6]
+	
+	R = logical([1   1   0  ; 1   0   0])
+	
+	RL = [true true false; true false false]
+	
+	Result = X(1, R(1, :))
+	
+	ResultL = X(1, RL(1, :))
+	
+R中为1的位置，对应到X的位置的元素被得到。
